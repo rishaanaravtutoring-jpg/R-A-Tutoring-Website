@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Removed invalid <tite> tag -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>https://R&ATutoring — Guiding Students. Growing Futures.</title>
+  <meta name="description" content="R&A Tutoring provides personalized Math and English support on weekends. Boost grades, build confidence, and master skills — one lesson at a time." />
+  <meta name="theme-color" content="#0B3D91" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="https://R&ATutoring" />
+  <meta property="og:description" content="Personalized Math & English tutoring. Saturday–Sunday, 8:00 AM–8:00 PM." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero.jpg" /> <!-- TODO: replace -->
+  <meta property="og:url" content="https://reallygreatsite.com" /> <!-- TODO: replace -->
+
+  <style>
+    :root{
+      --brand-blue:#0B3D91;
+      --brand-blue-600:#0a3580;
+      --brand-yellow:#FFC729;
+      --ink:#101418;
+      --ink-2:#2A2F36;
+      --muted:#6B7380;
+      --bg:#FFFFFF;
+      --bg-2:#F5F7FB;
+      --ring:#AEC7FF;
+      --radius:14px;
+      --shadow:0 8px 30px rgba(16,20,24,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    img{max-width:100%;height:auto}
+    a{color:var(--brand-blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #E7ECF5}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--brand-blue)}
+    .brand .logo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--brand-blue);color:#fff;font-weight:900}
+    .nav a.btn{background:var(--brand-yellow);color:#000;padding:10px 16px;border-radius:10px;font-weight:700;display:inline-block}
+    .nav a.btn:hover{filter:brightness(0.95);text-decoration:none}
+    /* Hero */
+    .hero{position:relative;isolation:isolate;background:linear-gradient(135deg,#0B3D91 0%,#1452C5 60%);color:#fff;overflow:hidden}
+    .hero:after{content:"";position:absolute;inset:-20% -10% auto auto;width:520px;height:520px;background:radial-gradient(circle at 30% 30%,rgba(255,199,41,0.35),transparent 60%);filter:blur(6px);z-index:0}
+    .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:36px;align-items:center;padding:52px 0;z-index:1;position:relative}
+    .hero h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
+    .tagline{font-size:clamp(16px,2.2vw,20px);opacity:0.95;margin-bottom:18px}
+    .hero .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);padding:8px 12px;border-radius:999px;font-weight:600}
+    .hero .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{background:var(--brand-yellow);color:#000;padding:14px 18px;border-radius:12px;font-weight:800;display:inline-flex;gap:10px;align-items:center;box-shadow:var(--shadow)}
+    .btn-secondary{background:transparent;border:2px solid rgba(255,255,255,0.7);color:#fff;padding:12px 16px;border-radius:12px;font-weight:700}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .hero-card{display:grid;gap:12px}
+    .hero-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .hi{border:1px solid #E7ECF5;border-radius:12px;padding:12px}
+    .hi b{display:block;font-size:14px;margin-bottom:4px}
+    /* Sections */
+    section{padding:56px 0}
+    .section-header{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px;gap:18px;flex-wrap:wrap}
+    h2{font-size:clamp(22px,3vw,30px);margin:0}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .feature{border:1px solid #E7ECF5;border-radius:14px;padding:18px;background:#fff}
+    .feature h3{margin:4px 0 6px;font-size:18px}
+    .badge{display:inline-block;background:var(--bg-2);border:1px solid #E7ECF5;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
+    .subjects .chip{display:inline-block;margin:6px 8px 0 0;padding:8px 12px;border-radius:999px;background:#0b3d910e;color:var(--brand-blue);border:1px dashed #AEC7FF;font-weight:700}
+    .stats{display:flex;gap:18px;flex-wrap:wrap}
+    .stat{background:#fff;border:1px solid #E7ECF5;border-radius:14px;padding:16px 18px;min-width:170px}
+    .stat b{font-size:22px;display:block}
+    /* Testimonials */
+    .quote{background:linear-gradient(0deg,#ffffff 0%,#f7f9ff 100%);border:1px solid #E7ECF5;border-radius:16px;padding:18px}
+    .quote p{margin:0}
+    .quote .who{margin-top:10px;color:var(--muted);font-weight:700}
+    /* FAQ */
+    details{border:1px solid #E7ECF5;border-radius:12px;padding:14px;background:#fff}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:800;color:var(--ink-2)}
+    /* Contact */
+    .contact{background:var(--bg-2)}
+    form{display:grid;gap:12px}
+    input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #D7DEEA;border-radius:12px;font:inherit;background:#fff}
+    input:focus,select:focus,textarea:focus{outline:3px solid var(--ring);border-color:var(--brand-blue)}
+    .inline{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .foot{border-top:1px solid #E7ECF5;padding:18px 0;color:var(--muted);font-size:14px}
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .inline{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container nav" aria-label="Primary">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">R&A</div>
+  <span>https://R&ATutoring</span>
+      </div>
+      <div>
+        <a href="#contact" class="btn" aria-label="Book a session">Book now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+        <div>
+          <div class="pill" aria-label="Weekend availability">
+            <span>📅 Saturday & Sunday</span> <span aria-hidden="true">•</span> <span>🕗 8:00 AM – 8:00 PM</span>
+          </div>
+          <h1 id="hero-heading">https://R&ATutoring — Guiding students. Growing futures.</h1>
+          <p class="tagline">Personalized Math & English tutoring that builds confidence, closes gaps, and turns effort into results.</p>
+          <div class="cta">
+            <a class="btn-primary" href="#contact">Book a free consult</a>
+            <a class="btn-secondary" href="#services">See how we help</a>
+          </div>
+        </div>
+
+        <aside class="card hero-card" aria-label="Highlights">
+          <div class="hero-highlights">
+            <div class="hi">
+              <b>Personalized plans</b>
+              <span>Each student gets a tailored learning path aligned to goals.</span>
+            </div>
+            <div class="hi">
+              <b>Clear progress</b>
+              <span>Session notes and measurable milestones after every lesson.</span>
+            </div>
+            <div class="hi">
+              <b>Flexible sessions</b>
+              <span>Online or in-person across weekend hours.</span>
+            </div>
+            <div class="hi">
+              <b>Trusted support</b>
+              <span>Friendly instruction that makes hard topics click.</span>
+            </div>
+          </div>
+          <div class="stats" aria-label="Key stats">
+            <div class="stat"><b>1:1 or Small Group</b><span>Choose your pace and budget.</span></div>
+            <div class="stat"><b>Math & English</b><span>Skills, homework, tests.</span></div>
+            <div class="stat"><b>Grades 3–12</b><span>Adapted to level and goals.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="services-heading">How we help</h2>
+          <span class="badge">Personalized & results-driven</span>
+        </div>
+
+        <div class="grid-3">
+          <article class="feature">
+            <h3>Math foundations to mastery</h3>
+            <p>From number sense and algebra to geometry and problem-solving strategies, we build durable understanding, not just quick fixes.</p>
+          </article>
+
+          <article class="feature">
+            <h3>English skills that stick</h3>
+            <p>Reading comprehension, grammar, vocabulary, and strong writing structure—practice that builds clarity and confidence.</p>
+          </article>
+
+          <article class="feature">
+            <h3>Study skills & test prep</h3>
+            <p>Planning, note-taking, and test strategies that reduce stress and improve performance across subjects.</p>
+          </article>
+        </div>
+
+        <div class="subjects" style="margin-top:16px">
+          <span class="chip">Homework support</span>
+          <span class="chip">Skill building</span>
+          <span class="chip">Assessment readiness</span>
+          <span class="chip">Reading & writing labs</span>
+          <span class="chip">Word problems</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="about-heading">Why families choose us</h2>
+          <span class="badge">Clarity, consistency, care</span>
+        </div>
+
+        <div class="grid-2">
+          <article class="feature">
+            <h3>Personalized learning, clear goals</h3>
+            <p>We begin with a quick assessment and conversation, then map goals into a plan with milestones. Parents get transparent updates after each session.</p>
+          </article>
+          <article class="feature">
+            <h3>Engaging sessions that build confidence</h3>
+            <p>Students learn faster when they feel safe to ask questions. We keep sessions interactive and encouraging so skills—and confidence—grow together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="testimonials-heading">Parent and student feedback</h2>
+          <span class="badge">Real results</span>
+        </div>
+
+        <div class="grid-3">
+          <figure class="quote">
+            <p>“Our son went from dreading math to explaining it to his friends. The weekly notes keep us in the loop.”</p>
+            <figcaption class="who">— A. Patel, Grade 6 parent</figcaption>
+          </figure>
+          <figure class="quote">
+            <p>“Writing finally makes sense. The checklists and examples helped me fix my essays fast.”</p>
+            <figcaption class="who">— J. Nguyen, Grade 9 student</figcaption>
+          </figure>
+          <figure class="quote">
+            <p>“Flexible weekend times are a lifesaver. Clear progress after every session.”</p>
+            <figcaption class="who">— M. Rivera, Grade 8 parent</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <span class="badge">Quick answers</span>
+        </div>
+
+        <details>
+          <summary>Do you offer online or in-person sessions?</summary>
+          <p>Both. We schedule virtual or local in-person sessions on Saturdays and Sundays between 8:00 AM and 8:00 PM.</p>
+        </details>
+        <details>
+          <summary>How long are sessions?</summary>
+          <p>Most sessions are 60 minutes. We can adjust to 45 or 90 minutes based on focus and goals.</p>
+        </details>
+        <details>
+          <summary>What ages or grades do you teach?</summary>
+          <p>We specialize in Grades 3–12 for Math and English, with tailored plans by level.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="contact-heading">Book a free consult</h2>
+          <span class="badge">Saturday & Sunday • 8:00 AM – 8:00 PM</span>
+        </div>
+
+        <div class="grid-2">
+          <form id="contactForm" aria-label="Contact form">
+            <div class="inline">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="inline">
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+1 (___) ___-____" />
+              </div>
+              <div>
+                <label for="grade">Student grade</label>
+                <select id="grade" name="grade" required>
+                  <option value="">Select</option>
+                  <option>3</option><option>4</option><option>5</option>
+                  <option>6</option><option>7</option><option>8</option>
+                  <option>9</option><option>10</option><option>11</option><option>12</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="subject">Subject focus</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select</option>
+                <option>Math</option>
+                <option>English</option>
+                <option>Both</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Goals or questions</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your goals…"></textarea>
+            </div>
+
+            <button class="btn-primary" type="submit">Send request</button>
+            <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="card">
+            <h3>Contact details</h3>
+            <p><strong>Phone:</strong> +123-456-7890 <!-- TODO: replace --></p>
+            <p><strong>Website:</strong> reallygreatsite.com <!-- TODO: replace --></p>
+            <p><strong>Availability:</strong> Saturday & Sunday, 8:00 AM – 8:00 PM</p>
+            <hr />
+            <h3>What happens next?</h3>
+            <p>We’ll reach out within 24 hours to schedule a quick call and set up your first session.</p>
+            <hr />
+            <h3>Prefer texting?</h3>
+            <p>Send “TUTOR” and we’ll reply with open slots.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> R&amp;A Tutoring. All rights reserved.</div>
+      <div>
+        <a href="#faq">FAQ</a> · <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Autofill year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lightweight form handler (replace with your endpoint)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      status.textContent = "Sending…";
+
+      // TODO: Replace with your form endpoint (e.g., Formspree, Netlify Forms, or your server)
+      // Example (Formspree):
+      // const endpoint = "https://formspree.io/f/your-id";
+      const endpoint = ""; 
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      try{
+        if(!endpoint){ 
+          // Demo fallback
+          await new Promise(r=>setTimeout(r,800));
+          status.textContent = "Thanks! We’ll be in touch within 24 hours.";
+          form.reset();
+          return;
+        }
+        const res = await fetch(endpoint,{
+          method:"POST",
+          headers:{ "Content-Type":"application/json" },
+          body: JSON.stringify(data)
+        });
+        if(!res.ok) throw new Error("Network error");
+        status.textContent = "Thanks! We’ll be in touch within 24 hours.";
+        form.reset();
+      }catch(err){
+        status.textContent = "Something went wrong. Please call or text us and we’ll get you scheduled.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -145,7 +145,7 @@
           <div class="stats" aria-label="Key stats">
             <div class="stat"><b>1:1 or Small Group</b><span>Choose your pace and budget.</span></div>
             <div class="stat"><b>Math & English</b><span>Skills, homework, tests.</span></div>
-            <div class="stat"><b>Grades 3–12</b><span>Adapted to level and goals.</span></div>
+            <div class="stat"><b>Grades 1-6</b><span>Adapted to level and goals.</span></div>
           </div>
         </aside>
       </div>
@@ -197,7 +197,6 @@
         <div class="grid-2">
           <article class="feature">
             <h3>Personalized learning, clear goals</h3>
-            <p>We begin with a quick assessment and conversation, then map goals into a plan with milestones. Parents get transparent updates after each session.</p>
           </article>
           <article class="feature">
             <h3>Engaging sessions that build confidence</h3>
@@ -260,9 +259,8 @@
                 <label for="grade">Student grade</label>
                 <select id="grade" name="grade" required>
                   <option value="">Select</option>
-                  <option>3</option><option>4</option><option>5</option>
-                  <option>6</option><option>7</option><option>8</option>
-                  <option>9</option><option>10</option><option>11</option><option>12</option>
+                  <option>1</option><option>2</option><option>3</option>
+                  <option>4</option><option>5</option><option>6</option>
                 </select>
               </div>
             </div>
@@ -290,10 +288,10 @@
             <h3>Contact details</h3>
             <p><strong>Phone:</strong> 925-557-0746 <!-- TODO: replace --></p>
             <p><strong>Website:</strong> https://r-a-tutoring-website.vercel.app/ <!-- TODO: replace --></p>
-            <p><strong>Availability:</strong> Saturday & Sunday, 8:00 AM – 8:00 PM</p>
+            <p><strong>Availability:</strong> Saturday & Sunday any time from, 8:00 AM – 8:00 PM</p>
             <hr />
             <h3>What happens next?</h3>
-            <p>We’ll reach out within 24 hours to schedule a quick call and set up your first session.</p>
+            <p>We’ll reach out within 72 hours to schedule a quick call and set up your first session.</p>
           </aside>
         </div>
       </div>
@@ -331,7 +329,7 @@
         if(!endpoint){ 
           // Demo fallback
           await new Promise(r=>setTimeout(r,800));
-          status.textContent = "Thanks! We’ll be in touch within 24 hours.";
+          status.textContent = "Thanks! We’ll be in touch within 72 hours.";
           form.reset();
           return;
         }
@@ -341,7 +339,7 @@
           body: JSON.stringify(data)
         });
         if(!res.ok) throw new Error("Network error");
-        status.textContent = "Thanks! We’ll be in touch within 24 hours.";
+        status.textContent = "Thanks! We’ll be in touch within 72 hours.";
         form.reset();
       }catch(err){
         status.textContent = "Something went wrong. Please call or text us and we’ll get you scheduled.";
